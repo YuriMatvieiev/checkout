@@ -316,7 +316,7 @@
                     type="text"
                     name="phone"
                     id="phone"
-                    class="offer__step-inputs-input"
+                    class="offer__step-inputs-input offer__step-inputs-input-error"
                   />
                 </div>
               </div>
@@ -460,6 +460,106 @@
                 <div class="offer__summary-total">
                   <div class="offer__summary-subtitle">Total</div>
                   <div class="offer__summary-final">$ 46.96</div>
+                </div>
+              </div>
+              <div class="offer__step offer__step-4">
+                <h3 class="h3-title offer__step-title">
+                  STEP 4: PAYMENT METHOD
+                </h3>
+                <h3 class="offer__step-desc">
+                  All transactions are secure and encrypted.
+                </h3>
+                <div class="offer__payment">
+                  <div class="offer__payment-option">
+                    <label for="checkout-card" class="offer__payment-header">
+                      <input
+                        class="offer__payment-radio"
+                        type="radio"
+                        name="checkout"
+                        id="checkout-card"
+                        checked
+                      />
+                      <div class="offer__payment-header-text">
+                        Credit/Debit Card
+                      </div>
+                      <div class="offer__payment-cards">
+                        <img src="./img/visa.svg" alt="Image" />
+                        <img src="./img/mastercard.svg" alt="Image" />
+                        <img src="./img/amex.svg" alt="Image" />
+                      </div>
+                    </label>
+                    <div class="offer__payment-details">
+                      <div class="offer__payment-details-row">
+                        <label
+                          class="offer__payment-details-label"
+                          for="card-number"
+                          >Card number</label
+                        >
+                        <input
+                          type="text"
+                          name="card-number"
+                          id="card-number"
+                          placeholder="1234 1234 1234 1234"
+                          class="offer__payment-details-input"
+                        />
+                      </div>
+
+                      <div class="offer__payment-details-duo">
+                        <div class="offer__payment-details-row">
+                          <label
+                            class="offer__payment-details-label"
+                            for="card-date"
+                            >MM/YY</label
+                          >
+                          <input
+                            type="text"
+                            name="card-date"
+                            id="card-date"
+                            placeholder="MM/YY"
+                            class="offer__payment-details-input"
+                          />
+                        </div>
+                        <div class="offer__payment-details-row">
+                          <label
+                            class="offer__payment-details-label"
+                            for="card-cvc"
+                            >CVC</label
+                          >
+                          <input
+                            type="text"
+                            name="card-cvc"
+                            id="card-cvc"
+                            placeholder="CVC"
+                            class="offer__payment-details-input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offer__payment-option">
+                    <label for="checkout-paypal" class="offer__payment-header">
+                      <input
+                        class="offer__payment-radio"
+                        type="radio"
+                        name="checkout"
+                        id="checkout-paypal"
+                      />
+                      <div class="offer__payment-logo">
+                        <img src="./img/paypal.svg" alt="Image" />
+                      </div>
+                    </label>
+                    <div class="offer__payment-details">
+                      <img
+                        class="offer__payment-offsite-img"
+                        src="./img/offsite-img.png"
+                        alt="Image"
+                      />
+                      <div class="offer__payment-offsite-text">
+                        After clicking "COMPLETE PURCHASE" below, you will be
+                        redirected to PayPal to complete your purchase securely.
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
