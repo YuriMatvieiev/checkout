@@ -63,6 +63,17 @@ $(document).ready(function () {
     updateCountdown();
   }
 
+  // accordion
+  $(".faq__accordion")
+    .find(".faq__accordion-toggle")
+    .click(function () {
+      $(this).next().slideToggle("600");
+      $(".faq__accordion-content").not($(this).next()).slideUp("600");
+    });
+  $(".faq__accordion-toggle").on("click", function () {
+    $(this).toggleClass("active").siblings().removeClass("active");
+  });
+
   // Start a 10-minute countdown
   startCountdown(600);
 });

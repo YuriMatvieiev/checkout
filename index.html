@@ -25,6 +25,7 @@
         <div class="hero__container">
           <div class="hero__wrap">
             <div class="hero__left">
+              <!-- top slider -->
               <div class="js-slider-top hero__slider-top">
                 <div class="hero__slide-top">
                   <img src="./img/slide-1.webp" alt="One" />
@@ -39,7 +40,7 @@
                   <img src="./img/slide-4.webp" alt="One" />
                 </div>
               </div>
-
+              <!-- bottom slider -->
               <div class="js-slider-bottom hero__slider-bottom">
                 <div class="hero__slide-bottom">
                   <img src="./img/slide-1.webp" alt="One" />
@@ -469,94 +470,379 @@
                 <h3 class="offer__step-desc">
                   All transactions are secure and encrypted.
                 </h3>
+                <!-- normal state class="offer__payment" -->
                 <div class="offer__payment">
-                  <div class="offer__payment-option">
-                    <label for="checkout-card" class="offer__payment-header">
-                      <input
-                        class="offer__payment-radio"
-                        type="radio"
-                        name="checkout"
-                        id="checkout-card"
-                        checked
-                      />
-                      <div class="offer__payment-header-text">
-                        Credit/Debit Card
-                      </div>
-                      <div class="offer__payment-cards">
-                        <img src="./img/visa.svg" alt="Image" />
-                        <img src="./img/mastercard.svg" alt="Image" />
-                        <img src="./img/amex.svg" alt="Image" />
-                      </div>
-                    </label>
-                    <div class="offer__payment-details">
-                      <div class="offer__payment-details-row">
-                        <label
-                          class="offer__payment-details-label"
-                          for="card-number"
-                          >Card number</label
-                        >
+                  <div class="offer__payment-options">
+                    <div class="offer__payment-option">
+                      <label for="checkout-card" class="offer__payment-header">
                         <input
-                          type="text"
-                          name="card-number"
-                          id="card-number"
-                          placeholder="1234 1234 1234 1234"
-                          class="offer__payment-details-input"
+                          class="offer__payment-radio"
+                          type="radio"
+                          name="checkout"
+                          id="checkout-card"
+                          checked
                         />
-                      </div>
-
-                      <div class="offer__payment-details-duo">
+                        <div class="offer__payment-header-text">
+                          Credit/Debit Card
+                        </div>
+                        <div class="offer__payment-cards">
+                          <img src="./img/visa.svg" alt="Image" />
+                          <img src="./img/mastercard.svg" alt="Image" />
+                          <img src="./img/amex.svg" alt="Image" />
+                        </div>
+                      </label>
+                      <div class="offer__payment-details">
                         <div class="offer__payment-details-row">
                           <label
                             class="offer__payment-details-label"
-                            for="card-date"
-                            >MM/YY</label
+                            for="card-number"
+                            >Card number</label
                           >
                           <input
                             type="text"
-                            name="card-date"
-                            id="card-date"
-                            placeholder="MM/YY"
+                            name="card-number"
+                            id="card-number"
+                            placeholder="1234 1234 1234 1234"
                             class="offer__payment-details-input"
                           />
                         </div>
-                        <div class="offer__payment-details-row">
-                          <label
-                            class="offer__payment-details-label"
-                            for="card-cvc"
-                            >CVC</label
-                          >
-                          <input
-                            type="text"
-                            name="card-cvc"
-                            id="card-cvc"
-                            placeholder="CVC"
-                            class="offer__payment-details-input"
-                          />
+
+                        <div class="offer__payment-details-duo">
+                          <div class="offer__payment-details-row">
+                            <label
+                              class="offer__payment-details-label"
+                              for="card-date"
+                              >MM/YY</label
+                            >
+                            <!-- if validation has passed, need to add a class offer__payment-details-input-complete -->
+                            <input
+                              type="text"
+                              name="card-date"
+                              id="card-date"
+                              placeholder="MM/YY"
+                              class="offer__payment-details-input offer__payment-details-input-complete"
+                            />
+                          </div>
+                          <div class="offer__payment-details-row">
+                            <label
+                              class="offer__payment-details-label"
+                              for="card-cvc"
+                              >CVC</label
+                            >
+                            <input
+                              type="text"
+                              name="card-cvc"
+                              id="card-cvc"
+                              placeholder="CVC"
+                              class="offer__payment-details-input"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offer__payment-option">
+                      <label
+                        for="checkout-paypal"
+                        class="offer__payment-header"
+                      >
+                        <input
+                          class="offer__payment-radio"
+                          type="radio"
+                          name="checkout"
+                          id="checkout-paypal"
+                        />
+                        <div class="offer__payment-logo">
+                          <img src="./img/paypal.svg" alt="Image" />
+                        </div>
+                      </label>
+                      <div class="offer__payment-details">
+                        <img
+                          class="offer__payment-offsite-img"
+                          src="./img/offsite-img.png"
+                          alt="Image"
+                        />
+                        <div class="offer__payment-offsite-text">
+                          After clicking "COMPLETE PURCHASE" below, you will be
+                          redirected to PayPal to complete your purchase
+                          securely.
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="offer__payment-option">
-                    <label for="checkout-paypal" class="offer__payment-header">
-                      <input
-                        class="offer__payment-radio"
-                        type="radio"
-                        name="checkout"
-                        id="checkout-paypal"
-                      />
-                      <div class="offer__payment-logo">
-                        <img src="./img/paypal.svg" alt="Image" />
+                  <div class="offer__payment-error-label">
+                    <b>Error:</b> Your card number is incomplete.
+                  </div>
+                </div>
+                <!-- / normal state class="offer__payment" -->
+                <!-- error state class="offer__payment offer__payment-error" -->
+                <div class="offer__payment offer__payment-error">
+                  <div class="offer__payment-options">
+                    <div class="offer__payment-option">
+                      <label
+                        for="checkout-card-2"
+                        class="offer__payment-header"
+                      >
+                        <input
+                          class="offer__payment-radio"
+                          type="radio"
+                          name="checkout-2"
+                          id="checkout-card-2"
+                          checked
+                        />
+                        <div class="offer__payment-header-text">
+                          Credit/Debit Card
+                        </div>
+                        <div class="offer__payment-cards">
+                          <img src="./img/visa.svg" alt="Image" />
+                          <img src="./img/mastercard.svg" alt="Image" />
+                          <img src="./img/amex.svg" alt="Image" />
+                        </div>
+                      </label>
+                      <div class="offer__payment-details">
+                        <div class="offer__payment-details-row">
+                          <label
+                            class="offer__payment-details-label"
+                            for="card-number-2"
+                            >Card number</label
+                          >
+                          <input
+                            type="text"
+                            name="card-number-2"
+                            id="card-number-2"
+                            placeholder="1234 1234 1234 1234"
+                            class="offer__payment-details-input"
+                          />
+                        </div>
+
+                        <div class="offer__payment-details-duo">
+                          <div class="offer__payment-details-row">
+                            <label
+                              class="offer__payment-details-label"
+                              for="card-date-2"
+                              >MM/YY</label
+                            >
+                            <input
+                              type="text"
+                              name="card-date-2"
+                              id="card-date-2"
+                              placeholder="MM/YY"
+                              class="offer__payment-details-input"
+                            />
+                          </div>
+                          <div class="offer__payment-details-row">
+                            <label
+                              class="offer__payment-details-label"
+                              for="card-cvc-2"
+                              >CVC</label
+                            >
+                            <input
+                              type="text"
+                              name="card-cvc-2"
+                              id="card-cvc-2"
+                              placeholder="CVC"
+                              class="offer__payment-details-input"
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </label>
-                    <div class="offer__payment-details">
+                    </div>
+                    <div class="offer__payment-option">
+                      <label
+                        for="checkout-paypal-2"
+                        class="offer__payment-header"
+                      >
+                        <input
+                          class="offer__payment-radio"
+                          type="radio"
+                          name="checkout-2"
+                          id="checkout-paypal-2"
+                        />
+                        <div class="offer__payment-logo">
+                          <img src="./img/paypal.svg" alt="Image" />
+                        </div>
+                      </label>
+                      <div class="offer__payment-details">
+                        <img
+                          class="offer__payment-offsite-img"
+                          src="./img/offsite-img.png"
+                          alt="Image"
+                        />
+                        <div class="offer__payment-offsite-text">
+                          After clicking "COMPLETE PURCHASE" below, you will be
+                          redirected to PayPal to complete your purchase
+                          securely.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offer__payment-error-label">
+                    <b>Error:</b> Your card number is incomplete.
+                  </div>
+                </div>
+                <!--/ error state class="offer__payment offer__payment-error" -->
+                <!-- payment button -->
+                <button class="offer__payment-button">
+                  <div class="offer__payment-button-top">
+                    COMPLETE PURCHASE
+                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                  </div>
+                  <div class="offer__payment-button-button">
+                    TRY IT RISK FREE! - 30 DAY MONEY BACK GUARANTEE!
+                  </div>
+                </button>
+                <!-- payment button -->
+                <div class="offer__logos">
+                  <img
+                    class="offer__logos-img"
+                    src="./img/checkout-secured.webp"
+                    alt="Image"
+                  />
+                  <ul class="offer__logos-list">
+                    <li>
+                      <img src="./img/amex.svg" alt="Image" />
+                    </li>
+                    <li>
+                      <img src="./img/mastercard.svg" alt="Image" />
+                    </li>
+                    <li>
+                      <img src="./img/visa.svg" alt="Image" />
+                    </li>
+                    <li>
+                      <img src="./img/amex.svg" alt="Image" />
+                    </li>
+                    <li>
+                      <img src="./img/mastercard.svg" alt="Image" />
+                    </li>
+                    <li>
+                      <img src="./img/visa.svg" alt="Image" />
+                    </li>
+                  </ul>
+                  <div class="offer__logos-text">
+                    <i class="fa-solid fa-lock-keyhole"></i>
+                    Secure 256-bit SSL encryption
+                  </div>
+                </div>
+                <div class="offer__guarantee">
+                  <img src="./img/guarantee.svg" alt="Image" />
+                  <div class="offer__guarantee-text">
+                    <div class="offer__guarantee-title">
+                      30 Day HERO Guarantee
+                    </div>
+                    <div class="offer__guarantee-desc">
+                      Try it risk-free today! Don't LOVE it? Simply send it back
+                      for a full refund.
+                    </div>
+                  </div>
+                </div>
+                <!-- TESTIMONIALS -->
+                <div class="offer__testimonials">
+                  <div class="offer__testimonials-title">
+                    What Customers Are Saying About Us:
+                  </div>
+                  <div class="offer__testimonials-wrap">
+                    <div class="offer__testimonials-item">
                       <img
-                        class="offer__payment-offsite-img"
-                        src="./img/offsite-img.png"
+                        class="offer__testimonials-photo"
+                        src="./img/testimonial-1.webp"
                         alt="Image"
                       />
-                      <div class="offer__payment-offsite-text">
-                        After clicking "COMPLETE PURCHASE" below, you will be
-                        redirected to PayPal to complete your purchase securely.
+                      <div class="offer__testimonials-info">
+                        <div class="offer__testimonials-author">
+                          <div class="offer__testimonials-name">
+                            Lynn Lopardo-Falduto
+                          </div>
+                          <div class="offer__testimonials-comment">
+                            I ordered 10 of these today because one prevented an
+                            awful house fire from my kitchen stove! In the blink
+                            of an eye, a bag I set down to drain bacon caught
+                            fire and the flames shot up! I quickly grabbed the
+                            blanket and smothered the fire but what a mess from
+                            the ashes and soot! I had to clean all day but at
+                            least my house and ME are in one piece! I got one
+                            for each of my kids, nieces, nephews & my
+                            daughter-in-law's moms
+                          </div>
+                        </div>
+                        <div class="offer__testimonials-bottom">
+                          <div class="offer__testimonials-like">Like</div>
+                          <div class="offer__testimonials-reply">Reply</div>
+                          <div class="offer__testimonials-date">2w</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offer__testimonials-item">
+                      <img
+                        class="offer__testimonials-photo"
+                        src="./img/testimonial-2.webp"
+                        alt="Image"
+                      />
+                      <div class="offer__testimonials-info">
+                        <div class="offer__testimonials-author">
+                          <div class="offer__testimonials-name">
+                            Jackie Pankok
+                          </div>
+                          <div class="offer__testimonials-comment">
+                            I bought several last year and gave them to my kids.
+                            My daughter called and said thank God she had it.
+                            She was cooking on the grill and the fire got out of
+                            hand. She threw her fire blanket on the fire and it
+                            saved the day!
+                          </div>
+                        </div>
+                        <div class="offer__testimonials-bottom">
+                          <div class="offer__testimonials-like">Like</div>
+                          <div class="offer__testimonials-reply">Reply</div>
+                          <div class="offer__testimonials-date">2w</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offer__testimonials-item">
+                      <img
+                        class="offer__testimonials-photo"
+                        src="./img/testimonial-3.webp"
+                        alt="Image"
+                      />
+                      <div class="offer__testimonials-info">
+                        <div class="offer__testimonials-author">
+                          <div class="offer__testimonials-name">Kim Ritter</div>
+                          <div class="offer__testimonials-comment">
+                            Just had to use mine last night, while cooking
+                            supper. Something under the burner caught fire. This
+                            put it out! Best purchase I have made in awhile.
+                            Bought two, one for downstairs and one for upstairs.
+                            Good to know that I can use it again.👍
+                          </div>
+                        </div>
+                        <div class="offer__testimonials-bottom">
+                          <div class="offer__testimonials-like">Like</div>
+                          <div class="offer__testimonials-reply">Reply</div>
+                          <div class="offer__testimonials-date">1w</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="offer__testimonials-item">
+                      <img
+                        class="offer__testimonials-photo"
+                        src="./img/testimonial-4.webp"
+                        alt="Image"
+                      />
+                      <div class="offer__testimonials-info">
+                        <div class="offer__testimonials-author">
+                          <div class="offer__testimonials-name">
+                            Sharon Berryhill
+                          </div>
+                          <div class="offer__testimonials-comment">
+                            I bought my granddaughter one last year hoping she
+                            wouldn't have to use it,but she did, on a grease
+                            fire,worked quickly and I think everyone should have
+                            one!
+                          </div>
+                        </div>
+                        <div class="offer__testimonials-bottom">
+                          <div class="offer__testimonials-like">Like</div>
+                          <div class="offer__testimonials-reply">Reply</div>
+                          <div class="offer__testimonials-date">2w</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -566,6 +852,136 @@
           </div>
         </div>
       </section>
+
+      <!-- FAQ -->
+      <section class="faq">
+        <div class="faq__container">
+          <h2 class="h2-title faq__title">Have a Question? We Can Help!</h2>
+          <div class="faq__accordion">
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Where does it ship from? How long does delivery take?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  North America (US/CA): Domestic orders will be shipped via
+                  USPS from our USA warehouses. A tracking number will be issued
+                  to your email. Typical delivery takes 2-4 business days. Some
+                  customers receive it within the next day!
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Can I use it on any type of fire?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  The Emergency Fire Blanket can successfully put out any source
+                  of fire that is smaller than the blanket itself. This includes
+                  electric fires, grease fires and more.
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Where should I store my fire blanket? Can I hang it?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  The best place to store your Fire Blanket by Prepared Hero is
+                  in high danger areas. This could be in your kitchen or heavily
+                  trafficked areas of the home, garage, vehicle, RV or camper.
+                  We recommend hanging them in cabinets so that it's ready for
+                  use in an instant.
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Can I reuse the emergency fire blanket?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  Yes! So long as the fire blanket isn't damaged, it can be
+                  reused. There can't be any holes or damaged materials. If it's
+                  just soot then it can be wiped off and reused.
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Is there an expiration date?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  There is no expiration date. The Emergency Fire Blanket never
+                  requires costly maintenance or recharging. As long as the
+                  blanket is in good condition, it will not expire.
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Are they approved in America?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  Yes, they are commonly recommended by fire departments and
+                  emergency services. This product is CE HS&E certified and
+                  meets EN-1869：1997 standards.
+                </p>
+              </div>
+            </div>
+            <div class="faq__accordion-item">
+              <h4 class="faq__accordion-toggle">
+                Are there PFOA's in this?
+                <i class="fa-solid fa-chevron-down"></i>
+              </h4>
+              <div class="faq__accordion-content">
+                <p>
+                  The Emergency Fire Blanket is woven out of fiberglass and does
+                  not contain any PFOA's.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__container">
+          <a href="#" class="footer__logo">
+            <img src="./img/footer-logo.webp" alt="Image" />
+          </a>
+          <a href="tel:+1 888-457-2672" class="footer__phone">
+            +1 888-457-2672
+          </a>
+          <a href="mailto:support@preparedhero.com" class="footer__email">
+            support@preparedhero.com
+          </a>
+          <ul class="footer__nav">
+            <li>
+              <a class="footer__link" href="#" target="_blank"> Shipping </a>
+            </li>
+            <li>
+              <a class="footer__link" href="#" target="_blank">Refund</a>
+            </li>
+            <li>
+              <a class="footer__link" href="#" target="_blank">Privacy</a>
+            </li>
+            <li>
+              <a class="footer__link" href="#" target="_blank">Terms</a>
+            </li>
+          </ul>
+          <div class="footer__copy">Copyright © 2025 Prepared Hero</div>
+        </div>
+      </footer>
     </main>
     <!-- jquery  -->
     <script
